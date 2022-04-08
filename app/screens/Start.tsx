@@ -42,6 +42,19 @@ const Start = () => {
         <>
             <StatusBar barStyle="dark-content" />
             <SafeAreaView>
+                {/* if list is huge flatlist would be better. */}
+                {/* <FlatList
+                  data={movies}
+                  keyExtractor={(item) => item.id}
+                  renderItem={({ item, index }) => (
+                    <Movie
+                      activeMovieId={activeMovieId}
+                      index={index}
+                      movie={item}
+                      open={open}
+                    />
+                  )}
+                /> */}
                 <ScrollView contentInsetAdjustmentBehavior="automatic">
                     {movies.map((movie, index) => (
                         <Movie

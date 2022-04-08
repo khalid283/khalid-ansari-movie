@@ -15,6 +15,7 @@ const fuzzCount = (count) => {
 
 const makeRandomMovie = (i) => {
     const movie = moviesData[i];
+    // this can check if i number of movie exists in the data and need to validated before pushing to array.
     return {
         id: uuid(),
         ...movie,
@@ -36,6 +37,7 @@ const makeReviews = (movie, count) => {
 };
 
 const generateMovies = (moviesCount, reviewsPerMovie) => {
+    // can run minimum of data length and moviesCount
     const movies = times((i) => makeRandomMovie(i), moviesCount);
 
     flatMap((movie) => makeReviews(movie, fuzzCount(reviewsPerMovie)), movies);
